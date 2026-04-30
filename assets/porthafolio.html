@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Thais Costa de Sales</title>
+  <style>
+    :root {
+      --primary: #6236ff;
+      --dark: #121214;
+      --bg-page: #f8f9fa; 
+      --text: #1a1a1a;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body { 
+      margin: 0; 
+      font-family: 'Georgia', serif; 
+      background-color: var(--bg-page); 
+      color: var(--text); 
+      line-height: 1.8;
+    }
+
+    h1, h2, h3, .label, .contact-title, .header-sub {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 800;
+      text-align: center; /* Centraliza títulos por padrão */
+    }
+
+    header { 
+      background: var(--white); 
+      padding: 80px 20px; 
+      border-bottom: 6px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centraliza o conteúdo do header */
+    }
+
+    header h1 { margin: 0; font-size: 2.8rem; text-transform: uppercase; letter-spacing: -1px; width: 100%; }
+    .header-sub { 
+      margin: 10px 0 0; 
+      font-size: 1rem; 
+      color: var(--primary); 
+      letter-spacing: 5px; 
+      display: block;
+      width: 100%;
+    }
+
+    .container { max-width: 800px; margin: auto; padding: 40px 20px; }
+
+    section { margin-bottom: 60px; }
+
+    .label-container { text-align: left; margin-bottom: 20px; }
+    .label { 
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 5px 12px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 2px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    h3 { font-size: 2.2rem; margin: 0 0 25px; line-height: 1.1; color: var(--dark); text-align: left; }
+
+    .profile-flex { 
+  display: flex; 
+  flex-direction: column; /* Faz o texto ficar embaixo da foto */
+  align-items: center; 
+  gap: 30px; 
+}
+
+.profile-pic { 
+  width: 100%;      /* A foto ocupa toda a largura disponível */
+  max-width: 400px; /* Mas não passa de 400px para não perder qualidade */
+  height: auto;     /* Ajusta a altura proporcionalmente */
+  border-bottom: 8px solid var(--primary); 
+}
+
+    p { margin-bottom: 25px; font-size: 1.15rem; text-align: left; }
+
+    .pull-quote {
+      margin: 40px -40px;
+      padding: 40px;
+      background: var(--dark);
+      color: var(--white);
+      font-size: 1.5rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    figure { margin: 35px -40px; }
+    img { width: 100%; display: block; }
+    figcaption { 
+      padding: 12px 40px; 
+      font-size: 0.85rem; 
+      background: #fdfbff; 
+      color: #666; 
+      font-family: sans-serif;
+      border-bottom: 1px solid #eee;
+    }
+
+    .lyrics-box {
+      background: #f8f6ff;
+      padding: 30px;
+      border-left: 4px solid var(--primary);
+      font-family: sans-serif;
+      font-style: italic;
+      margin: 30px 0;
+    }
+
+    /* FOOTER ESTILIZADO E CENTRALIZADO */
+    footer { 
+      background: var(--dark);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-name { 
+      font-size: 1.8rem; 
+      margin: 0; 
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-role { 
+      font-size: 0.9rem; 
+      color: var(--primary); 
+      letter-spacing: 3px; 
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .contact-links { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 15px; 
+    }
+
+    .contact-links a { 
+      color: var(--white); 
+      text-decoration: none; 
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: bold; 
+      font-size: 1.1rem;
+      transition: opacity 0.3s;
+    }
+
+    .contact-links a:hover { opacity: 0.7; }
+
+    @media (max-width: 768px) {
+      .card { padding: 25px; }
+      .profile-flex { flex-direction: column; text-align: center; }
+      .pull-quote, figure { margin: 30px -25px; }
+      header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Thais Costa de Sales</h1>
+  <span class="header-sub">PORTFÓLIO JORNALÍSTICO</span>
+</header>
+
+<main class="container">
+
+  <section>
+    <div class="label-container"><span class="label">Sobre Mim</span></div>
+    <div class="card">
+      <div class="profile-flex">
+        <img src="assets/thais.jpeg" alt="Thais Costa" class="profile-pic">
+        <div class="profile-text">
+          <p>Me chamo Thais, tenho 19 anos e atualmente estou cursando o segundo semestre de jornalismo. Escolhi esse curso por ter um interesse em saber as histórias dos outros, e por gostar de me comunicar, continuei o curso por perceber que ele abre portas para mundos infinitos, sair nas ruas, conhecer pessoas e ouvir uma vivência diferente da outra é o que torna o Jornalismo tão rico. É um curso onde me idenfico bastante e percebo um crescimento tanto profissional quanto pessoal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label-container"><span class="label">Nota Jornalística</span></div>
+    <div class="card">
+      <p>O festival The Town reuniu 420 mil pessoas ao longo dos finais de semana de 6 a 14 de setembro no Autódromo de Interlagos, em São Paulo. O evento contou com shows de artistas nacionais, como Ivete Sangalo e internacionais, como Lionel Richie. O evento teve destaque pela diversidade de estilos musicais que animaram o público durante os cinco dias de apresentações.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="label-container"><span class="label">Cultura</span></div>
+    <article class="card">
+      <h3>No Teatro Municipal, uma ópera histórica reposiciona a arte negra</h3>
+      
+      <p>Montagem de Porgy and Bess, apresentada entre 19 e 27 de setembro de 2025, reuniu elenco majoritariamente preto e construiu uma abordagem inédita que uniu dança urbana, pós-contemporâneo e crítica às representações tradicionais da obra.</p>
+
+      <figure>
+        <img src="assets/escadaria.jpeg" alt="Teatro Municipal">
+        <figcaption>(Escadaria do Teatro Municipal no dia da pré-estreia da ópera /Foto: Thais Costa de Sales).</figcaption>
+      </figure>
+
+      <p>A nova montagem de Porgy and Bess no Theatro Municipal de São Paulo ultrapassou a condição de acontecimento artístico e assumiu dimensões históricas. O palco mais tradicional da cidade recebeu uma ópera dirigida e protagonizada por artistas pretos, conduzida pela encenadora Grace Passô e pelo diretor de movimento e coreógrafo Mário Lopes, 45 anos. A ópera, escrita por George Gershwin, e estreada pela primeira vez em 1935, fala de desigualdade, misericórdia, alcoolismo, doenças, pobreza e do peso de uma liberdade recém-conquistada que não era liberdade de verdade, esse entendimento foi o ponto de partida para reconstruir a obra em cena.</p>
+      
+      <p>A releitura coreográfica rompeu com o estilo tradicional que costuma acompanhar montagens estrangeiras. Mário integrou danças urbanas brasileiras, krump, vogue, ballroom e também práticas autorais que já vinha desenvolvendo, como “kodex_konflikt”, “impurando movimento” e “salivar os nós”. O processo envolveu cerca de 30 bailarinos de formações muito distintas. “Não existe tecnicamente ‘o corpo certo’ para um movimento. Eu crio a partir do que o corpo me oferece, o bailarino não é um executor, ele constrói a gramática comigo”, resume.</p>
+
+      <p>A liberdade na sala de ensaio foi, segundo ele, essencial para que surgisse uma linguagem nova, e isso também significou rever cenas tradicionalmente montadas de forma repetida ao redor do mundo. A morte de Robbins, um personagem da ópera, por exemplo, deixou de expor violência de modo explícito para evitar a reprodução daquilo que o próprio Mário chama de “espetacularização da morte negra”, em vez disso, formou-se uma barreira coreográfica, como se o elenco armasse um escudo físico entre o público e o corpo caído. “Não faria sentido reforçar um imaginário que historicamente feriu-nos, explica.</p>
+
+      <p>Nem tudo foi simples, o excesso de artistas em cena durante trechos dos spirituals criou problemas de acústica, o som dos passos atrapalhava o coro e a regência do maestro. O conflito técnico virou campo de invenção. Mário e os cantores negociaram, testaram novas dinâmicas e reorganizaram ritmos até encontrar uma solução que não apagasse a força performativa dos movimentos. “Cenicamente, algumas coisas funcionavam muito bem, mas precisávamos de uma gramática comum para que ninguém fosse atropelado pela cena”, conta.</p>
+
+      <p>Se no palco havia uma construção coletiva, na plateia também havia algo que fugia do padrão. Como a temporada foi aberta ao público, pessoas de perfis muito variados compareceram ao Municipal, especialmente na pré-estreia, quando familiares e amigos ocuparam boa parte dos assentos, uma das presenças mais comentadas foi a da escritora Conceição Evaristo, cuja passagem mobilizou elenco e público. Artistas descendo a escadaria junto dos espectadores, abraços cruzando fronteiras entre palco e plateia e uma vibração incomum ao final dos aplausos.</p>
+
+      <div class="pull-quote">
+        “Ver um monte de gente branca aplaudindo a arte que o povo preto é capaz de fazer é muito satisfatório.”
+      </div>
+
+      <p>Dentre esses espectadores estava Thales Lopes Oliveira da Silva, consultor de vendas júnior 19 anos, sobrinho de Mário. Para ele, assistir à montagem tinha um peso particular, “esse lugar foi feito por nós, mas não para nós”, diz, lembrando a história de exclusão que marca o Municipal desde sua fundação, sustentado por mão de obra negra, mas frequentado por um público branco e elitizado. Sua avó, aos 69 anos, colocou os pés no teatro pela primeira vez justamente para ver a ópera, “É um sentimento de representatividade quase indescritível”, afirma.</p>
+
+      <p>A sensação de estar diante de um elenco sobretudo negro, comandado por um diretor de movimento também negro, marcou o jovem profundamente. “A gente estava em maioria em um espaço feito para gente branca, isso foi o que mais me marcou”, conta. Para ele, orgulho e felicidade dominaram a experiência, o momento que repetiria? Os aplausos finais. “Ver um monte de gente branca aplaudindo a arte que o povo preto é capaz de fazer é muito satisfatório.”</p>
+
+      <p>O impacto da obra, no entanto, não se limitou ao público, para Mário, o processo também significou enfrentar as próprias fronteiras da criação preta em espaços historicamente marcados por hierarquias. Ele se lembra de bailarinos sugerindo movimentos ou propondo variações improvisadas que mudavam o rumo das cenas. “A coreografia reage ao corpo, eu sigo o fluxo do que aparece. Nada é rígido”, afirma. A presença de artistas estrangeiros, segundo ele, foi absorvida por essa lógica, o que importava não era estilo ou currículo, mas a organicidade gestual que cada corpo trazia do seu cotidiano.</p>
+
+      <p>O resultado não buscou ilustrar uma ideia de “dança negra”, mas questionar noções de autoria, técnica e pertencimento. Em várias passagens, a fisicalidade dos corpos tensionava o texto original, abrindo espaço para novas leituras da dramaturgia. “Se a gente não tem dados, o que a gente tem é o corpo, e, o corpo sempre sabe”, resume o coreógrafo, em uma de suas falas mais citadas ao longo do processo.</p>
+
+      <figure>
+        <img src="assets/mario.jpeg" alt="Mário Lopes">
+        <figcaption>(Mário Lopes, diretor de coreográfia da ópera/ Foto: reprodução instagram)</figcaption>
+      </figure>
+
+      <p>A montagem brasileira de Porgy and Bess não apresentou uma versão definitiva da obra, mas uma interpretação situada, construída na fricção entre história, prática e memória, para muitos espectadores, o mais potente não foi apenas ver pessoas negras performando personagens negras, mas testemunhar essas presenças ocupando, com competência técnica e liberdade estética, um dos lugares mais simbólicos da cultura paulistana.</p>
+
+      <p>“É uma conquista que representa um avanço para a história negra no Brasil”, diz Thales. Já Mário resume o processo de forma simples, “não queríamos encaixar o corpo preto na forma da ópera. Queríamos deixar a ópera ser modificada pelo nosso corpo.” No Municipal, pela primeira vez para muita gente, essa transformação pôde ser vista, sentida e aplaudida.</p>
+    </article>
+  </section>
+
+  <section>
+    <div class="label-container"><span class="label" style="background: #4caf50;">Esportes</span></div>
+    <article class="card">
+      <h3>A união de uma torcida: Loucos por Osasco</h3>
+      
+      <p>Antes mesmo do primeiro saque, Osasco já tem vantagem, é só entrar no ginásio para perceber quem dita o ritmo: a “Loucos por Osasco”. A torcida organizada transforma o espaço em casa, com presença constante, vozes fortes e uma identidade que não se confunde com nenhuma outra.</p>
+
+      <figure>
+        <img src="assets/volis.jpeg" alt="Torcida Loucos por Osasco">
+        <figcaption>A presença constante da torcida organizada no Ginásio do Liberatti. (Foto: Thais Costa de Sales).</figcaption>
+      </figure>
+
+      <p>No primeiro semestre de 98, o BCN Osasco jogou as finais no campeonato paulista de vôlei na cidade de Ribeirão Preto, onde ganhou de 3×0, se consagrando campeão paulista na semana seguinte. No retorno para Osasco, houve uma reunião entre torcedores e representantes da Secretaria de Esportes de Osasco para discutir sobre a formação de uma torcida organizada atuante, já que a presença tanto nos jogos de vôlei quanto nos de basquete era garantida. Uma semana após a reunião, um membro da torcida, Inajara (um dos fundadores da Gaviões da Fiel), foi chamado na Secretaria de Esportes para conversar sobre a formação da torcida. Sua experiência de arquibancada da Gaviões poderia ajudar na formação de um novo tipo de torcida, a do vôlei. Depois das conversas, as arquibancadas do Liberatti começaram a receber, sem a participação do patrocinador, a nova torcida que se faz presente até hoje.</p>
+
+      <p>Fundada por Inajara Martinho, 73 anos, ela carrega uma força que parece maior do que a própria soma dos seus integrantes, ele fala do grupo como quem descreve um laço familiar: “O que nos torna diferentes é a dedicação e a união. Independente do resultado, estamos lá, firmes e fortes, não só pela torcida, mas pelas jogadoras. Em Osasco, torcer não é reação ao placar. É pacto. É postura. É presença.”</p>
+
+      <p>E tudo começa pela relação com o vôlei, uma relação que, segundo eles, não foi escolhida, foi concedida. “Sempre dizemos que não fomos nós que escolhemos o vôlei. O vôlei nos escolheu”, afirma Inajara. O time virou referência afetiva, extensão de casa, motivo de orgulho e ponto de encontro desde 2012. Nesse cenário, não existia uma torcida organizada, até que eles se tornaram essa ausência preenchida.</p>
+
+      <div class="pull-quote" style="background: var(--primary);">
+        “Em Osasco, torcer não é reação ao placar. É pacto. É postura. É presença.”
+      </div>
+
+      <p>Para Isabelly Victoria Mendes, 26 anos, fazer parte dos Loucos por Osasco é a única forma verdadeira de transformar amor em ação. “Só assistir não basta, participar me dá oportunidade de mostrar tudo o que sinto.”</p>
+
+      <p>Já para Alan da Silva Costa, 35 anos, a torcida é mais íntima, quase terapêutica. “Se perguntar a cem pessoas, terá cem respostas, para mim, é refúgio. Eu não desabafo com ninguém, mas aqui eu extravaso, deixo as mágoas pra trás. Fazer parte dessa torcida é estar com uma família que me acolheu.”</p>
+
+      <p>E essa energia coletiva toma forma física, Raires Braz, 37 anos, descreve como se fosse coreografia espontânea, “É como se todo mundo pensasse uma única coisa e contagiasse um ao outro, essa energia invade a quadra.” Não é exagero. Marcos Vinicius, 33 anos, confirma do ponto de vista técnico, “Quando a torcida está morta, reflete no time. Quanto mais inflamamos o ginásio, mais elas mantêm o ritmo e a pegada.”</p>
+
+      <p>E as jogadoras sabem disso, elas notam, olham e reconhecem, “Temos amizade com muitas delas”, conta Raires. “Nos momentos difíceis, basta olharem pra nós, estamos ali, cantando até o fim.” Essa troca é tão forte que já virou marca da cultura osasquense, um time que joga com a torcida e uma torcida que joga junto com o time.</p>
+
+      <p>A identidade dos Loucos por Osasco também tem símbolos muito claros. O mascote, Taz-Mania, representa a mistura perfeita entre a energia caótica e a simpatia do grupo. O lema oficial, assumido por Inajara, é direto “Somos loucos por Osasco.” E é esse amor visceral que atravessa gerações, conecta desconhecidos e cria raízes emocionais em pleno ginásio.</p>
+
+      <p>Nem tudo, porém, é simples, em um esporte que não tem tradição de torcidas organizadas, manter estrutura e mobilização é um desafio constante. “A maior dificuldade é engajamento dos membros e falta de verba”, explica Isabelly. Muitas ações dependem de vaquinhas, da boa vontade de poucos, ou de um esforço coletivo que nem sempre encontra braços suficientes.</p>
+
+      <p>Outro obstáculo é romper o preconceito: “A maior dificuldade é mostrar que o vôlei é um esporte familiar”, diz Inajara. Em um ambiente marcado historicamente por rivalidades agressivas, Osasco decidiu trilhar o caminho oposto, sem violência, sem ofensas e sem vandalismo. “Muitas famílias vão ao ginásio e gostam da festa que fazemos, esse é nosso maior diferencial, somos exemplo!”</p>
+
+      <p>Dentro desse universo, o vôlei oferece algo que outros esportes raramente conseguem, proximidade verdadeira e respeito mutuo. “As torcidas adversárias param quando uma jogadora cai, e aplaudem quando ela levanta”, lembra Marco Valencise, 23 anos, é um ambiente onde humanidade vem antes da rivalidade, e isso fortalece ainda mais a essência da Loucos por Osasco.</p>
+
+      <p>E como toda torcida que se preza, eles têm sua trilha sonora oficial o canto que explode em harmonia, em ritmo de Tim Maia, e que virou a assinatura emocional do grupo. A música completa é:</p>
+
+      <div class="lyrics-box">
+        A semana inteira<br>
+        Fiquei esperando<br>
+        Pra te ver, Osasco<br>
+        Pra te ver jogando<br><br>
+        Quando a gente ama<br>
+        Não mede esforço<br>
+        Pra te ver jogar<br>
+        Te ver jogar<br>
+        Te ver jogar<br><br>
+        Não é brincadeira<br>
+        Vou vestir meu manto<br>
+        Manto osasquense<br><br>
+        Tem que ter respeito<br>
+        Amor à camisa<br>
+        Vou com o Osasco<br>
+        Pra qualquer lugar
+      </div>
+
+      <p>E se a paixão é vivida no ginásio, ela também cresce nas redes sociais onde fotos, vídeos e notícias mantêm viva a chama entre um jogo e outro. “As redes sociais são fundamentais para divulgar o vôlei e o time”, afirma Isabelly. Elas ampliam vozes, fortalecem o clube, conectam torcedores, aproximam jogadores e permitem que essa comunidade continue pulsando mesmo fora da quadra.</p>
+
+      <p>No fim, a grande pergunta não é por que essa torcida existe, mas como ela consegue ser tudo isso ao mesmo tempo: caldeirão, família, refúgio, identidade e cura. Talvez porque, como eles próprios dizem, o vôlei os escolheu, e assim eles seguem felizes sendo Loucos por Osasco.</p>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <h2 class="footer-name">Thais Costa de Sales</h2>
+  <span class="footer-role">JORNALISTA EM FORMAÇÃO</span>
+  
+  <div class="contact-links">
+    <a href="mailto:thaiscosta658@gmail.com">📧 thaiscosta658@gmail.com</a>
+    <a href="https://wa.me/5511979921230" target="_blank">💬 (11) 97992-1230</a>
+  </div>
+</footer>
+
+</body>
+</html>
