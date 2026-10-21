@@ -1,263 +1,322 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio | Thais Costa de Sales</title>
+  <title>Thais Costa de Sales | Portfólio jornalístico</title>
+  <meta name="description" content="Portfólio de Thais Costa de Sales, estudante de Jornalismo: reportagem em vídeo, cultura, esportes e notas jornalísticas.">
+  <meta property="og:title" content="Thais Costa de Sales | Portfólio jornalístico">
+  <meta property="og:description" content="Reportagem em vídeo, cultura, esportes e notas jornalísticas.">
+  <meta property="og:image" content="assets/video/reportagem-poster.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #6236ff;
-      --dark: #121214;
-      --bg-page: #f8f9fa; 
-      --text: #1a1a1a;
-      --white: #ffffff;
+      --ink: #15171c;
+      --ink-soft: #454a55;
+      --paper: #ffffff;
+      --page: #f3f4f7;
+      --rule: #d9dce3;
+      --purple: #5427d8;
+      --green: #1f7a4d;
+      --red: #c8102e;
+      --accent: var(--purple);
+      --sans: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
+      --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
     }
 
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
-    body { 
-      margin: 0; 
-      font-family: 'Georgia', serif; 
-      background-color: var(--bg-page); 
-      color: var(--text); 
-      line-height: 1.8;
+    .skip {
+      position: absolute; left: 12px; top: -60px; z-index: 100;
+      background: var(--ink); color: #fff; padding: 10px 16px;
+      font-family: var(--sans); font-weight: 700; text-decoration: none;
+    }
+    .skip:focus { top: 12px; }
+
+    /* ---------- Cabeçalho (marca do jornal) ---------- */
+    .masthead { background: var(--paper); border-top: 8px solid var(--ink); }
+    .masthead .inner { max-width: 1040px; margin: 0 auto; padding: 44px 24px 30px; }
+    .masthead .role {
+      margin: 0 0 6px; font-family: var(--sans); font-weight: 700;
+      font-size: 1rem; color: var(--purple); line-height: 1.3;
+    }
+    .masthead h1 {
+      margin: 0; font-family: var(--sans); font-weight: 800;
+      font-size: clamp(2.4rem, 7vw, 4.6rem); line-height: 1; letter-spacing: -0.03em;
+    }
+    .masthead .sub {
+      margin: 16px 0 0; max-width: 34em; font-size: 1.15rem;
+      line-height: 1.5; color: var(--ink-soft);
     }
 
-    /* --- CABEÇALHO --- */
-    header { 
-      background: var(--white); 
-      padding: 80px 20px; 
-      border-bottom: 6px solid var(--primary);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    /* ---------- Navegação por editorias ---------- */
+    .sections {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--paper);
+      border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    }
+    .sections ul {
+      list-style: none; margin: 0 auto; padding: 0 24px; max-width: 1040px;
+      display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
+    }
+    .sections ul::-webkit-scrollbar { display: none; }
+    .sections a {
+      display: block; white-space: nowrap; padding: 15px 12px 13px;
+      font-family: var(--sans); font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; color: var(--ink);
+      border-bottom: 3px solid transparent;
+    }
+    .sections a:hover { border-bottom-color: var(--c, var(--ink)); }
+    .sections a[href="#video"] { --c: var(--red); }
+    .sections a[href="#cultura"] { --c: var(--purple); }
+    .sections a[href="#esportes"] { --c: var(--green); }
+
+    /* ---------- Estrutura das editorias ---------- */
+    main { padding-bottom: 40px; }
+    .desk { margin: 0 auto; padding: 56px 24px 8px; max-width: 1040px; }
+    .desk > .read { max-width: 720px; }
+
+    .kicker {
+      display: inline-block; margin: 0 0 22px; padding-left: 12px;
+      border-left: 6px solid var(--accent);
+      font-family: var(--sans); font-weight: 800; font-size: 1.05rem;
+      line-height: 1.2; color: var(--accent);
     }
 
-    header h1 { 
-      margin: 0; 
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 800;
-      font-size: 3rem; 
-      text-transform: uppercase; 
-      letter-spacing: -1px; 
+    .headline {
+      margin: 0 0 18px; font-family: var(--sans); font-weight: 800;
+      font-size: clamp(1.9rem, 4.6vw, 2.9rem); line-height: 1.08; letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+    .byline {
+      margin: 0 0 26px; padding: 12px 0; font-family: var(--sans);
+      font-size: 0.9rem; color: var(--ink-soft);
+      border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    }
+    .byline strong { color: var(--ink); }
+
+    .read p { margin: 0 0 1.3em; text-align: left; hyphens: auto; }
+    .read p.lede {
+      font-size: 1.4rem; line-height: 1.5; font-weight: 600; color: var(--ink);
     }
 
-    .header-sub { 
-      margin: 10px 0 0; 
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 800;
-      font-size: 1rem; 
-      color: var(--primary); 
-      letter-spacing: 5px; 
-      text-transform: uppercase;
+    .story {
+      background: var(--paper); padding: 44px 48px 36px;
+      border-top: 4px solid var(--accent);
+    }
+    .story .read { max-width: none; }
+    .story .read > :not(figure) { max-width: 680px; }
+
+    /* Fotos e legendas */
+    figure { margin: 36px -48px; }
+    figure img { width: 100%; height: auto; }
+    figcaption {
+      padding: 10px 48px 0; font-family: var(--sans); font-size: 0.88rem;
+      line-height: 1.45; color: var(--ink-soft);
+    }
+    .credit { font-weight: 700; color: var(--ink); white-space: nowrap; }
+
+    /* Citação em destaque */
+    blockquote.pull {
+      margin: 40px 0; padding: 4px 0 4px 24px;
+      border-left: 6px solid var(--accent);
+      font-family: var(--sans); font-weight: 700;
+      font-size: clamp(1.4rem, 3vw, 1.85rem); line-height: 1.28; letter-spacing: -0.01em;
     }
 
-    /* --- CONTEÚDO --- */
-    .container { max-width: 850px; margin: auto; padding: 40px 20px; }
-
-    section { margin-bottom: 80px; }
-
-    .label { 
-  display: inline-block;
-  background: var(--primary);
-  color: var(--white);
-  padding: 10px 20px; /* Aumente aqui: o primeiro valor é altura, o segundo é largura */
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 0.8rem; /* Se quiser o texto maior tbm */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
-    .card {
-      background: var(--white);
-      padding: 50px;
-      border-radius: 2px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    .lyrics {
+      margin: 30px 0; padding: 28px 32px; background: var(--page);
+      border-left: 4px solid var(--accent);
+      font-family: var(--sans); font-style: italic; font-size: 1.05rem; line-height: 1.7;
     }
 
-    h3 { 
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 800;
-      font-size: 2.2rem; 
-      margin: 0 0 25px; 
-      line-height: 1.1; 
-      color: var(--dark); 
+    /* Reportagem em vídeo (destaque) */
+    #video { --accent: var(--red); padding-top: 44px; }
+    .player { background: #000; aspect-ratio: 16 / 9; }
+    .player video { width: 100%; height: 100%; background: #000; }
+    .video-copy {
+      display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+      gap: 48px; padding: 34px 0 10px;
     }
-
-    /* SOBRE MIM - Foto Maior */
-    .profile-flex { 
-      display: flex; 
-      flex-direction: column; /* Faz o texto ficar embaixo da foto */
-      align-items: center; 
-      gap: 30px; 
-}
-
-    .profile-pic { 
-      width: 100%;      /* A foto ocupa toda a largura disponível */
-      max-width: 400px; /* Mas não passa de 400px para não perder qualidade */
-      height: auto;     /* Ajusta a altura proporcionalmente */
-      border-bottom: 8px solid var(--primary); 
-}
-
-    p { margin-bottom: 25px; font-size: 1.2rem; text-align: justify; }
-
-    /* ELEMENTOS VISUAIS */
-    .pull-quote {
-  margin: 40px -50px;
-  padding: 60px; /* Aumente aqui para o retângulo ficar mais "gordo" e alto */
-  background: var(--dark);
-  color: var(--white);
-  font-size: 1.8rem; /* Aumentar a letra ajuda a preencher o retângulo */
-  text-align: center;
-  line-height: 1.4;
-}
-
-    figure { margin: 40px -50px; }
-    img { width: 100%; display: block; }
-    figcaption { 
-      padding: 15px 50px; 
-      font-size: 0.9rem; 
-      background: #fdfbff; 
-      color: #666; 
-      font-family: sans-serif;
-      border-bottom: 1px solid #eee;
+    .video-copy .headline { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    .video-copy .read p { margin-bottom: 1.1em; }
+    .facts {
+      margin: 0; align-self: start; padding: 22px 24px; background: var(--paper);
+      border-top: 4px solid var(--ink); font-family: var(--sans); font-size: 0.95rem; line-height: 1.45;
     }
+    .facts h3 { margin: 0 0 14px; font-size: 1.05rem; font-weight: 800; }
+    .facts dt { margin-top: 14px; font-weight: 800; }
+    .facts dd { margin: 2px 0 0; color: var(--ink-soft); }
 
-    .lyrics-box {
-      background: #f8f6ff;
-      padding: 40px;
-      border-left: 5px solid var(--primary);
-      font-family: sans-serif;
-      font-style: italic;
-      margin: 35px 0;
-      font-size: 1.1rem;
+    /* Sobre e Nota */
+    #sobre, #nota { --accent: var(--ink); }
+    .about { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 40px; align-items: start; }
+    .about img { width: 100%; height: auto; border-bottom: 6px solid var(--purple); }
+    .about p { margin: 0; }
+    .brief { background: var(--paper); padding: 30px 36px; border-top: 4px solid var(--ink); }
+    .brief p { margin: 0; max-width: 680px; }
+
+    #cultura { --accent: var(--purple); }
+    #esportes { --accent: var(--green); }
+
+    /* Comportamento (áudio) */
+    :root { --teal: #0b6e7f; }
+    .sections a[href="#comportamento"] { --c: var(--teal); }
+    #comportamento { --accent: var(--teal); }
+    .story h3.sub {
+      margin: 40px 0 12px; font-family: var(--sans); font-weight: 800;
+      font-size: 1.35rem; line-height: 1.2; letter-spacing: -0.01em;
     }
-
-    /* --- RODAPÉ CENTRALIZADO --- */
-    footer { 
-      background: var(--dark);
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .audio-box {
+      margin: 30px 0 8px; padding: 20px 22px 22px; background: var(--page);
+      border-left: 6px solid var(--accent); font-family: var(--sans);
     }
+    .audio-box .audio-title { margin: 0 0 12px; font-weight: 800; font-size: 1.02rem; line-height: 1.3; }
+    .audio-box .audio-meta { margin: 10px 0 0; font-size: 0.88rem; color: var(--ink-soft); }
+    .audio-box audio { width: 100%; }
+    .story .facts { background: var(--page); margin: 32px 0 0; }
 
-    .footer-name { 
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 800;
-      font-size: 2rem; 
-      margin: 0; 
-      text-transform: uppercase;
+    /* ---------- Rodapé ---------- */
+    footer { margin-top: 56px; background: var(--ink); color: #fff; }
+    footer .inner { max-width: 1040px; margin: 0 auto; padding: 56px 24px 64px; }
+    .footer-name {
+      margin: 0; font-family: var(--sans); font-weight: 800;
+      font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.02em; line-height: 1.1;
     }
+    .footer-role { margin: 6px 0 28px; font-family: var(--sans); color: #b9a8ff; font-weight: 700; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 14px 36px; font-family: var(--sans); font-weight: 700; }
+    .contact-links a { text-decoration: none; border-bottom: 2px solid #5b5f6b; padding-bottom: 2px; }
+    .contact-links a:hover { border-bottom-color: #fff; }
 
-    .footer-role { 
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-weight: 800;
-      font-size: 0.9rem; 
-      color: var(--primary); 
-      letter-spacing: 4px; 
-      margin-bottom: 40px;
-      text-transform: uppercase;
-    }
-
-    .contact-links { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 20px; 
-    }
-
-    .contact-links a { 
-      color: var(--white); 
-      text-decoration: none; 
-      font-family: Arial, sans-serif;
-      font-weight: bold; 
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-
-    .contact-links a:hover { color: var(--primary); }
-
-    /* --- RESPONSIVIDADE (MOBILE) --- */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      .header-sub { font-size: 0.8rem; letter-spacing: 3px; }
-
-      .container { padding: 20px 15px; }
-      .card { padding: 30px 20px; }
-
-      .profile-flex { 
-        flex-direction: column; 
-        text-align: center; 
-      }
-
-      .profile-pic {
-        width: 220px; 
-        height: 220px;
-      }
-
-      h3 { font-size: 1.8rem; text-align: center; }
-      p { font-size: 1.1rem; text-align: left; }
-
-      .pull-quote, figure { 
-        margin: 30px -20px; 
-        padding: 40px 20px; 
-      }
+    /* ---------- Mobile ---------- */
+    @media (max-width: 820px) {
+      body { font-size: 1.08rem; }
+      .masthead .inner { padding: 32px 18px 24px; }
+      .sections ul { padding: 0 10px; }
+      .desk { padding: 40px 0 0; }
+      .desk > .read, .desk > .kicker, .video-copy, .about, .brief { margin-left: 18px; margin-right: 18px; }
+      .desk > .kicker { margin-left: 18px; }
+      .story { padding: 28px 18px 24px; }
+      figure { margin: 28px -18px; }
+      figcaption { padding: 10px 18px 0; }
+      .video-copy { grid-template-columns: 1fr; gap: 26px; }
+      .about { grid-template-columns: 1fr; gap: 22px; }
+      .about img { max-width: 280px; }
+      .brief { padding: 24px 20px; }
+      .read p.lede { font-size: 1.22rem; }
+      footer .inner { padding: 44px 18px 52px; }
     }
   </style>
 </head>
 <body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header>
-  <h1>Thais Costa de Sales</h1>
-  <span class="header-sub">PORTFÓLIO JORNALÍSTICO</span>
+<header class="masthead">
+  <div class="inner">
+    <p class="role">Portfólio jornalístico</p>
+    <h1>Thais Costa de Sales</h1>
+    <p class="sub">Estudante de Jornalismo em São Paulo. Reportagem, cultura e esportes, do texto ao vídeo.</p>
+  </div>
 </header>
 
-<main class="container">
+<nav class="sections" aria-label="Editorias">
+  <ul>
+    <li><a href="#video">Reportagem em vídeo</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#nota">Nota</a></li>
+    <li><a href="#cultura">Cultura</a></li>
+    <li><a href="#esportes">Esportes</a></li>
+    <li><a href="#comportamento">Comportamento</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
 
-  <section>
-    <span class="label">Sobre Mim</span>
-    <div class="card">
-      <div class="profile-flex">
-        <img src="assets/thais.jpeg" alt="Thais Costa" class="profile-pic">
-        <div class="profile-text">
-          <p>Me chamo Thais, tenho 19 anos e atualmente estou cursando o segundo semestre de jornalismo. Escolhi esse curso por ter um interesse em saber as histórias dos outros, e por gostar de me comunicar, continuei o curso por perceber que ele abre portas para mundos infinitos, sair nas ruas, conhecer pessoas e ouvir uma vivência diferente da outra é o que torna o Jornalismo tão rico. É um curso onde me idenfico bastante e percebo um crescimento tanto profissional quanto pessoal.</p>
-        </div>
+<main id="conteudo">
+
+  <!-- DESTAQUE: REPORTAGEM EM VÍDEO -->
+  <section id="video" class="desk" aria-labelledby="video-titulo">
+    <p class="kicker">Reportagem em vídeo</p>
+    <div class="player">
+      <video controls preload="metadata" playsinline poster="assets/video/reportagem-poster.jpg"
+             aria-label="Reportagem em vídeo de Thaís Sales sobre redes sociais, algoritmos e eleições">
+        <source src="assets/video/reportagem-thais-sales.mp4" type="video/mp4">
+        Seu navegador não reproduz vídeo. <a href="assets/video/reportagem-thais-sales.mp4">Baixe a reportagem em MP4</a>.
+      </video>
+    </div>
+
+    <div class="video-copy">
+      <div class="read">
+        <h2 class="headline" id="video-titulo">Eleições, redes e algoritmos: quem decide o que você vê?</h2>
+        <p class="byline"><strong>Por Thaís Sales</strong>, São Paulo. Reportagem em vídeo, 3 minutos.</p>
+        <p class="lede">Perfis com milhões de seguidores, regras de plataformas que podem tirar uma conta do ar e algoritmos que escolhem o que chega a cada eleitor: a reportagem mostra como as redes sociais viraram um dos principais palcos da disputa política.</p>
+        <p>O vídeo parte do alcance de parlamentares nas redes, como Erika Hilton (SP), com 7,3 milhões, Ana Elisa (MG), com 3,9 milhões, e Guilherme Cortez (SP), com 1,2 milhão. Na sequência, discute o poder de moderação das plataformas a partir do caso de um perfil desabilitado por descumprir os Padrões da Comunidade, e ouve a estudante Amanda Yamamoto sobre como esse ambiente afeta quem consome política no dia a dia.</p>
+        <p>Com passagem da repórter, imagens de arquivo, infográficos e depoimento, o material combina apuração, dados e narrativa audiovisual.</p>
       </div>
+      <aside class="facts" aria-label="Ficha da reportagem">
+        <h3>Ficha da reportagem</h3>
+        <dl>
+          <dt>Repórter</dt><dd>Thaís Sales</dd>
+          <dt>Local</dt><dd>São Paulo</dd>
+          <dt>Formato</dt><dd>Reportagem em vídeo com passagem, entrevista e infográficos</dd>
+          <dt>Entrevistada</dt><dd>Amanda Yamamoto, estudante</dd>
+          <dt>Duração</dt><dd>3 minutos</dd>
+          <dt>Créditos de imagem</dt><dd>Paulo Pinto/Agência Brasil; Rebecca Buzato/Le Monde Diplomatique Brasil</dd>
+        </dl>
+      </aside>
     </div>
   </section>
 
-  <section>
-    <span class="label">Nota Jornalística</span>
-    <div class="card">
-      <p>O festival The Town reuniu 420 mil pessoas ao longo dos finais de semana de 6 a 14 de setembro no Autódromo de Interlagos, em São Paulo. O evento contou com shows de artistas nacionais, como Ivete Sangalo e internacionais, como Lionel Richie. O evento teve destaque pela diversidade de estilos musicais que animaram o público durante os cinco dias de apresentações.</p>
+  <!-- SOBRE -->
+  <section id="sobre" class="desk" aria-labelledby="sobre-titulo">
+    <h2 class="kicker" id="sobre-titulo">Sobre</h2>
+    <div class="about">
+      <img src="assets/thais.jpeg" alt="Retrato de Thais Costa de Sales">
+      <div class="read"><p>Me chamo Thais, tenho 19 anos e atualmente estou cursando o segundo semestre de jornalismo. Escolhi esse curso por ter um interesse em saber as histórias dos outros, e por gostar de me comunicar, continuei o curso por perceber que ele abre portas para mundos infinitos, sair nas ruas, conhecer pessoas e ouvir uma vivência diferente da outra é o que torna o Jornalismo tão rico. É um curso onde me identifico bastante e percebo um crescimento tanto profissional quanto pessoal.</p></div>
     </div>
   </section>
 
-  <section>
-    <span class="label">Cultura</span>
-    <article class="card">
-      <h3>No Teatro Municipal, uma ópera histórica reposiciona a arte negra</h3>
-      <p>Montagem de Porgy and Bess, apresentada entre 19 e 27 de setembro de 2025, reuniu elenco majoritariamente preto e construiu uma abordagem inédita que uniu dança urbana, pós-contemporâneo e crítica às representações tradicionais da obra.</p>
+  <!-- NOTA -->
+  <section id="nota" class="desk" aria-labelledby="nota-titulo">
+    <h2 class="kicker" id="nota-titulo">Nota jornalística</h2>
+    <div class="brief"><p>O festival The Town reuniu 420 mil pessoas ao longo dos finais de semana de 6 a 14 de setembro no Autódromo de Interlagos, em São Paulo. O evento contou com shows de artistas nacionais, como Ivete Sangalo e internacionais, como Lionel Richie. O evento teve destaque pela diversidade de estilos musicais que animaram o público durante os cinco dias de apresentações.</p></div>
+  </section>
+
+  <!-- CULTURA -->
+  <section id="cultura" class="desk" aria-labelledby="cultura-titulo">
+    <h2 class="kicker" id="cultura-titulo">Cultura</h2>
+    <article class="story">
+      <div class="read">
+        <h2 class="headline">No Teatro Municipal, uma ópera histórica reposiciona a arte negra</h2>
+        <p class="byline"><strong>Por Thais Costa de Sales</strong></p>
+      <p class="lede">Montagem de Porgy and Bess, apresentada entre 19 e 27 de setembro de 2025, reuniu elenco majoritariamente preto e construiu uma abordagem inédita que uniu dança urbana, pós-contemporâneo e crítica às representações tradicionais da obra.</p>
 
       <figure>
         <img src="assets/escadariahd.jpeg" alt="Teatro Municipal">
-        <figcaption>(Escadaria do Teatro Municipal no dia da pré-estreia da ópera /Foto: Thais Costa de Sales).</figcaption>
+        <figcaption>Escadaria do Theatro Municipal no dia da pré-estreia da ópera. <span class="credit">Foto: Thais Costa de Sales</span></figcaption>
       </figure>
 
       <p>A nova montagem de Porgy and Bess no Theatro Municipal de São Paulo ultrapassou a condição de acontecimento artístico e assumiu dimensões históricas. O palco mais tradicional da cidade recebeu uma ópera dirigida e protagonizada por artistas pretos, conduzida pela encenadora Grace Passô e pelo diretor de movimento e coreógrafo Mário Lopes, 45 anos. A ópera, escrita por George Gershwin, e estreada pela primeira vez em 1935, fala de desigualdade, misericórdia, alcoolismo, doenças, pobreza e do peso de uma liberdade recém-conquistada que não era liberdade de verdade, esse entendimento foi o ponto de partida para reconstruir a obra em cena.</p>
       
-      <div class="pull-quote">
-        “Não existe tecnicamente ‘o corpo certo’ para um movimento. Eu crio a partir do que o corpo me oferece...”
-      </div>
+      <blockquote class="pull">“Não existe tecnicamente ‘o corpo certo’ para um movimento. Eu crio a partir do que o corpo me oferece...”</blockquote>
 
       <p>A releitura coreográfica rompeu com o estilo tradicional que costuma acompanhar montagens estrangeiras. Mário integrou danças urbanas brasileiras, krump, vogue, ballroom e também práticas autorais que já vinha desenvolvendo, como “kodex_konflikt”, “impurando movimento” e “salivar os nós”. O processo envolveu cerca de 30 bailarinos de formações muito distintas. “Não existe tecnicamente ‘o corpo certo’ para um movimento. Eu crio a partir do que o corpo me oferece, o bailarino não é um executor, ele constrói a gramática comigo”, resume.</p>
 
-      <p>A liberdade na sala de ensaio foi, segundo ele, essencial para que surgisse uma linguagem nova, e isso também significou rever cenas tradicionalmente montadas de forma repetida ao redor do mundo. A morte de Robbins, um personagem da ópera, por exemplo, deixou de expor violência de modo explícito para evitar a reprodução daquilo que o próprio Mário chama de “espetacularização da morte negra”, em vez disso, formou-se uma barreira coreográfica, como se o elenco armasse um escudo físico entre o público e o corpo caído. “Não faria sentido reforçar um imaginário que historicamente feriu-nos, explica.</p>
+      <p>A liberdade na sala de ensaio foi, segundo ele, essencial para que surgisse uma linguagem nova, e isso também significou rever cenas tradicionalmente montadas de forma repetida ao redor do mundo. A morte de Robbins, um personagem da ópera, por exemplo, deixou de expor violência de modo explícito para evitar a reprodução daquilo que o próprio Mário chama de “espetacularização da morte negra”, em vez disso, formou-se uma barreira coreográfica, como se o elenco armasse um escudo físico entre o público e o corpo caído. “Não faria sentido reforçar um imaginário que historicamente feriu-nos”, explica.</p>
 
       <p>Nem tudo foi simples, o excesso de artistas em cena durante trechos dos spirituals criou problemas de acústica, o som dos passos atrapalhava o coro e a regência do maestro. O conflito técnico virou campo de invenção. Mário e os cantores negociaram, testaram novas dinâmicas e reorganizaram ritmos até encontrar uma solução que não apagasse a força performativa dos movimentos. “Cenicamente, algumas coisas funcionavam muito bem, mas precisávamos de uma gramática comum para que ninguém fosse atropelado pela cena”, conta.</p>
 
@@ -273,33 +332,35 @@
 
       <figure>
         <img src="assets/mario.jpeg" alt="Mário Lopes">
-        <figcaption>(Mário Lopes, diretor de coreográfia da ópera/ Foto: reprodução instagram)</figcaption>
+        <figcaption>Mário Lopes, diretor de coreografia da ópera. <span class="credit">Foto: reprodução/Instagram</span></figcaption>
       </figure>
 
       <p>A montagem brasileira de Porgy and Bess não apresentou uma versão definitiva da obra, mas uma interpretação situada, construída na fricção entre história, prática e memória, para muitos espectadores, o mais potente não foi apenas ver pessoas negras performando personagens negras, mas testemunhar essas presenças ocupando, com competência técnica e liberdade estética, um dos lugares mais simbólicos da cultura paulistana.</p>
 
       <p>“É uma conquista que representa um avanço para a história negra no Brasil”, diz Thales. Já Mário resume o processo de forma simples, “não queríamos encaixar o corpo preto na forma da ópera. Queríamos deixar a ópera ser modificada pelo nosso corpo.” No Municipal, pela primeira vez para muita gente, essa transformação pôde ser vista, sentida e aplaudida.</p>
+      </div>
     </article>
   </section>
 
-  <section>
-    <span class="label" style="background: #4caf50;">Esportes</span>
-    <article class="card">
-      <h3>A união de uma torcida: Loucos por Osasco</h3>
-      <p>Antes mesmo do primeiro saque, Osasco já tem vantagem, é só entrar no ginásio para perceber quem dita o ritmo: a “Loucos por Osasco”. A torcida organizada transforma o espaço em casa, com presença constante, vozes fortes e uma identidade que não se confunde com nenhuma outra.</p>
+  <!-- ESPORTES -->
+  <section id="esportes" class="desk" aria-labelledby="esportes-titulo">
+    <h2 class="kicker" id="esportes-titulo">Esportes</h2>
+    <article class="story">
+      <div class="read">
+        <h2 class="headline">A união de uma torcida: Loucos por Osasco</h2>
+        <p class="byline"><strong>Por Thais Costa de Sales</strong></p>
+      <p class="lede">Antes mesmo do primeiro saque, Osasco já tem vantagem, é só entrar no ginásio para perceber quem dita o ritmo: a “Loucos por Osasco”. A torcida organizada transforma o espaço em casa, com presença constante, vozes fortes e uma identidade que não se confunde com nenhuma outra.</p>
 
       <figure>
         <img src="assets/volis.jpeg" alt="Torcida Loucos por Osasco">
-        <figcaption>A presença constante da torcida organizada no Ginásio do Liberatti. (Foto: Thais Costa de Sales).</figcaption>
+        <figcaption>A presença constante da torcida organizada no Ginásio do Liberatti. <span class="credit">Foto: Thais Costa de Sales</span></figcaption>
       </figure>
 
       <p>No primeiro semestre de 98, o BCN Osasco jogou as finais no campeonato paulista de vôlei na cidade de Ribeirão Preto, onde ganhou de 3×0, se consagrando campeão paulista na semana seguinte. No retorno para Osasco, houve uma reunião entre torcedores e representantes da Secretaria de Esportes de Osasco para discutir sobre a formação de uma torcida organizada atuante, já que a presença tanto nos jogos de vôlei quanto nos de basquete era garantida. Uma semana após a reunião, um membro da torcida, Inajara (um dos fundadores da Gaviões da Fiel), foi chamado na Secretaria de Esportes para conversar sobre a formação da torcida. Sua experiência de arquibancada da Gaviões poderia ajudar na formação de um novo tipo de torcida, a do vôlei. Depois das conversas, as arquibancadas do Liberatti começaram a receber, sem a participação do patrocinador, a nova torcida que se faz presente até hoje.</p>
 
       <p>Fundada por Inajara Martinho, 73 anos, ela carrega uma força que parece maior do que a própria soma dos seus integrantes, ele fala do grupo como quem descreve um laço familiar: “O que nos torna diferentes é a dedicação e a união. Independente do resultado, estamos lá, firmes e fortes, não só pela torcida, mas pelas jogadoras. Em Osasco, torcer não é reação ao placar. É pacto. É postura. É presença.”</p>
 
-      <div class="pull-quote" style="background: var(--primary);">
-        “Sempre dizemos que não fomos nós que escolhemos o vôlei. O vôlei nos escolheu.”
-      </div>
+      <blockquote class="pull">“Sempre dizemos que não fomos nós que escolhemos o vôlei. O vôlei nos escolheu.”</blockquote>
 
       <p>E tudo começa pela relação com o vôlei, uma relação que, segundo eles, não foi escolhida, foi concedida. “Sempre dizemos que não fomos nós que escolhemos o vôlei. O vôlei nos escolheu”, afirma Inajara. O time virou referência afetiva, extensão de casa, motivo de orgulho e ponto de encontro desde 2012. Nesse cenário, não existia uma torcida organizada, até que eles se tornaram essa ausência preenchida.</p>
 
@@ -321,7 +382,7 @@
 
       <p>E como toda torcida que se preza, eles têm sua trilha sonora oficial o canto que explode em harmonia, em ritmo de Tim Maia, e que virou a assinatura emocional do grupo. A música completa é:</p>
 
-      <div class="lyrics-box">
+      <div class="lyrics">
         A semana inteira<br>Fiquei esperando<br>Pra te ver, Osasco<br>Pra te ver jogando<br><br>
         Quando a gente ama<br>Não mede esforço<br>Pra te ver jogar<br>Te ver jogar<br>Te ver jogar<br><br>
         Não é brincadeira<br>Vou vestir meu manto<br>Manto osasquense<br><br>
@@ -331,18 +392,67 @@
       <p>E se a paixão é vivida no ginásio, ela também cresce nas redes sociais onde fotos, vídeos e notícias mantêm viva a chama entre um jogo e outro. “As redes sociais são fundamentais para divulgar o vôlei e o time”, afirma Isabelly. Elas ampliam vozes, fortalecem o clube, conectam torcedores, aproximam jogadores e permitem que essa comunidade continue pulsando mesmo fora da quadra.</p>
 
       <p>No fim, a grande pergunta não é por que essa torcida existe, mas como ela consegue ser tudo isso ao mesmo tempo: caldeirão, família, refúgio, identidade e cura. Talvez porque, como eles próprios dizem, o vôlei os escolheu, e assim eles seguem felizes sendo Loucos por Osasco.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- COMPORTAMENTO: PAUTA + ENTREVISTA EM ÁUDIO -->
+  <section id="comportamento" class="desk" aria-labelledby="comportamento-titulo">
+    <h2 class="kicker" id="comportamento-titulo">Comportamento</h2>
+    <article class="story">
+      <div class="read">
+        <h2 class="headline">Tendência ou escolha? O que leva a gente a comprar roupa</h2>
+        <p class="byline"><strong>Por Thais Costa de Sales</strong>. Proposta de reportagem com entrevista em áudio, 7 minutos.</p>
+        <p class="lede">Uma tendência surge no TikTok, chega às lojas virtuais em poucos dias e vira vontade de comprar. A pauta investiga o quanto essa vontade é espontânea e o quanto é construída, a partir do cotidiano de quem consome moda.</p>
+
+        <div class="audio-box">
+          <p class="audio-title" id="audio-titulo">Ouça a entrevista com João, que trabalha com brechós</p>
+          <audio controls preload="metadata" aria-labelledby="audio-titulo">
+            <source src="assets/audio/entrevista-moda-consumo.mp3" type="audio/mpeg">
+            Seu navegador não reproduz áudio. <a href="assets/audio/entrevista-moda-consumo.mp3">Baixe a entrevista em MP3</a>.
+          </audio>
+          <p class="audio-meta">Entrevista em áudio, 7 minutos.</p>
+        </div>
+
+        <h3 class="sub">Justificativa</h3>
+        <!-- Se você tiver a justificativa original completa, cole-a aqui no lugar da frase abaixo,
+             mantendo o parágrafo seguinte logo depois da frase sobre o TikTok e as lojas virtuais. -->
+        <p>As tendências de moda surgem no TikTok e, em poucos dias, chegam às lojas virtuais, em um ciclo cada vez mais rápido.</p>
+        <p>Mais do que acompanhar tendências, a proposta é refletir sobre como elas são construídas e disseminadas, e sobre o papel da publicidade, dos influenciadores e dos algoritmos nesse processo. A reportagem pretende partir de experiências reais de consumidores para compreender o que motiva uma compra: a necessidade, o desejo de se expressar, a influência de pessoas que admiramos ou a sensação de que precisamos acompanhar o que está em alta. A intenção é questionar até que ponto o consumo de fast fashion representa uma escolha individual e como o ambiente digital pode tornar essa decisão cada vez mais frequente e impulsiva.</p>
+
+        <h3 class="sub">O que a entrevista mostra</h3>
+        <p>Na conversa, Thais entrevista João, que trabalha com brechós, sobre moda, tendências e consumo. Ele conta que o brechó nasceu dentro de casa: a mãe tinha um brechó de roupas importadas, e ele cresceu em contato com peças de segunda mão. Passou a garimpar na adolescência, por hobby, e só em 2022, segundo ele, virou a chave e passou a enxergar o brechó como atividade.</p>
+
+        <blockquote class="pull">“A moda ainda sempre vai ser uma expressão pessoal.”</blockquote>
+
+        <p>Sobre a influência das redes, João afirma que o TikTok dita o ritmo das tendências e que as marcas correm para acompanhá-lo. Na experiência dele, o nicho de brechó cresceu muito por causa das redes sociais, com vídeos de garimpo e de lugares escondidos de São Paulo para achar roupas baratas, e o preconceito com a roupa de segunda mão diminuiu. Na avaliação dele, esse boom ainda não afeta tanto a indústria de peças novas.</p>
+        <p>João também relaciona o crescimento dos brechós à busca por peças únicas. Cita o exemplo de uma peça vintage da Carhartt, marca norte-americana: muita gente prefere a versão antiga, com marcas do tempo e história, à atual da loja.</p>
+        <p>Para encerrar, a pergunta central da pauta: a moda ainda é expressão pessoal ou está cada vez mais ligada ao consumo? Para João, continua sendo expressão pessoal. Mesmo com a influência da internet, ele diz que muita gente carrega elementos próprios, e que ele mesmo usa peças que escolheu por gosto, não por trend.</p>
+
+        <aside class="facts" aria-label="Ficha da entrevista">
+          <h3>Ficha da entrevista</h3>
+          <dl>
+            <dt>Entrevistadora</dt><dd>Thais Costa de Sales</dd>
+            <dt>Entrevistado</dt><dd>João, que trabalha com brechós</dd>
+            <dt>Formato</dt><dd>Entrevista em áudio</dd>
+            <dt>Duração</dt><dd>7 minutos</dd>
+            <dt>Temas</dt><dd>Tendências nas redes, TikTok, fast fashion, brechó, moda como expressão pessoal</dd>
+          </dl>
+        </aside>
+      </div>
     </article>
   </section>
 
 </main>
 
-<footer>
-  <h2 class="footer-name">Thais Costa de Sales</h2>
-  <span class="footer-role">JORNALISTA EM FORMAÇÃO</span>
-  
-  <div class="contact-links">
-    <a href="mailto:thaiscosta@gmail.com">📧 thaiscosta658@gmail.com</a>
-    <a href="https://wa.me/5511979921230" target="_blank">💬 (11) 97992-1230</a>
+<footer id="contato">
+  <div class="inner">
+    <h2 class="footer-name">Thais Costa de Sales</h2>
+    <p class="footer-role">Jornalista em formação</p>
+    <div class="contact-links">
+      <a href="mailto:thaiscosta658@gmail.com">thaiscosta658@gmail.com</a>
+      <a href="https://wa.me/5511979921230" target="_blank" rel="noopener">WhatsApp (11) 97992-1230</a>
+    </div>
   </div>
 </footer>
 
